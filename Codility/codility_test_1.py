@@ -1,41 +1,51 @@
 '''
-Created on Oct 22, 2014
+Created on Oct 24, 2014
 
 @author: alantai
 '''
+import random
+def find_next_bigger_number(arg_list):
+    sorted_list = quick_sort_upscending(arg_list)
+    
+    min_num = min(sorted_list)
+    if min_num != 1:
+        return "missing number is 1"
+    max_num = max(sorted_list)
+    if max_num != 10:
+        return "missing number is 10"
+    
+    for ith in range(0, len(sorted_list) - 1, 1):
+        if sorted_list[ith + 1] - sorted_list[ith] > 1:
+            return "missing number is {0}".format((sorted_list[ith] + 1))
 
-def find_next_bigger_number(A):
-    # write your code in Python 2.7
-    result = []
-    P = 1
-    while True:
-        if P > len(A) - 1:
-            break
-        
-        sub_ary_1 = A[:P:1]
-        sub_ary_2 = A[P+1::1]
-        sum_sub_ary_1 = 0
-        sum_sub_ary_2 = 0
-        
-        if len(sub_ary_1) == 0:
-            sum_sub_ary_1 = 0
-        else:
-            sum_sub_ary_1 = sum(sub_ary_1)
-        
-        if len(sub_ary_2) == 0:
-            sum_sub_ary_2 = 0
-        else:
-            sum_sub_ary_2 = sum(sub_ary_2)
-            
-        if sum_sub_ary_1 == sum_sub_ary_2:
-            result.append(P)
-        P += 1
-        
-    if len(result) == 0:
-        return -1
+def quick_sort_upscending(arg_ary):
+    smaller = []
+    pivot_list = []
+    bigger = []
+    
+    if len(arg_ary) <= 1:
+        return arg_ary
     else:
-        return result
+        pivot_value = arg_ary[0]
+        
+        for ith in arg_ary:
+            if ith < pivot_value:
+                smaller.append(ith)
+            elif ith > pivot_value:
+                bigger.append(ith)
+            else:
+                pivot_list.append(ith)
+                
+    smaller = quick_sort_upscending(smaller)
+    bigger = quick_sort_upscending(bigger)
+    return smaller + pivot_list + bigger
 
 if __name__ == "__main__":
-    given_ary = [-1,3,-4,5,1,-6,2,1]
-    print find_next_bigger_number(given_ary)
+    given_list = [1,2,3,4,5,6,7,8,9,10]
+    
+    # randomly delete one number
+    rand = random.sample(given_list, 1)
+    del given_list[rand[0] - 1]
+    random.shuffle(given_list)
+    print "original list: " + given_list.__str__()
+    print find_next_bigger_number(given_list)
