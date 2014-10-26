@@ -51,6 +51,20 @@ def solution_test_1(A):
     else:
         return result
         
+
+def solution_2(K, A):
+    result = []
+    P = 0
+    
+    while P < len(A):
+        for ith in range(0, len(A) , 1):
+            if (A[P] + A[ith]) == K:
+                result.append((P, ith))
+        P += 1
+                
+    # return final answer
+    return result
+    
 def solution_test_2(K, A):
     result = []
     P = 0
@@ -67,19 +81,6 @@ def solution_test_2(K, A):
                 if (A[P] + A[(len(A) - 1) - (ith)]) == K:
                     result.append((P, (len(A) - 1) - (ith)))
                     
-            if (A[P] + A[ith]) == K:
-                result.append((P, ith))
-        P += 1
-                
-    # return final answer
-    return result
-
-def solution_2(K, A):
-    result = []
-    P = 0
-    
-    while P < len(A):
-        for ith in range(0, len(A) , 1):
             if (A[P] + A[ith]) == K:
                 result.append((P, ith))
         P += 1
