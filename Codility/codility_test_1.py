@@ -4,7 +4,7 @@ Created on Oct 24, 2014
 @author: alantai
 '''
 import random
-def find_next_bigger_number(arg_list):
+def find_missing_number(arg_list):
     sorted_list = quick_sort_upscending(arg_list)
     
     min_num = min(sorted_list)
@@ -48,4 +48,4 @@ if __name__ == "__main__":
     del given_list[rand[0] - 1]
     random.shuffle(given_list)
     print "original list: " + given_list.__str__()
-    print find_next_bigger_number(given_list)
+    print find_missing_number(given_list)

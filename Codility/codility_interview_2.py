@@ -76,8 +76,6 @@ def solution_2(A):
     return max_length
 #     return result
 
-
-
 def quick_sort_upscending( arg_ary):
     #init arrays
     smaller = []
@@ -102,8 +100,23 @@ def quick_sort_upscending( arg_ary):
         bigger = quick_sort_upscending(bigger)
         return smaller + pivotList + bigger
 
+# solution 2-2
+def solution_test_2(A):
+    result = []
+    for elem in A:
+        subsequence = []
+        if len(result) > 0:
+            for sub_list in result:
+                for sub_elem in sub_list:
+                    pass
+
 if __name__ == "__main__":
     test_maxtrix = [[2, 7, 5], [3, 1, 1]]
     print solution_1(test_maxtrix)
 
     print solution_2([6, 10, 1,0,2,3,2,1,2,2,3,3,2,4,5,2,3,3,67,7])
+    
+    for elem in []:
+        print elem
+    
+    
