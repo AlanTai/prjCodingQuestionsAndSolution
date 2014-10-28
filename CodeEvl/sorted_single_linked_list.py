@@ -46,7 +46,9 @@ if __name__ == "__main__":
     node_2 = Node(9)
     node_3 = Node(0)
     node_4 = Node(4)
-    node_5 = Node(3)
+    node_5 = Node(1)
+    node_6 = Node(-2)
+    node_7 = Node(15)
                     
     sorted_linked_list = SortedLinkedList()
     sorted_linked_list.add_node(node_1)
@@ -54,6 +56,8 @@ if __name__ == "__main__":
     sorted_linked_list.add_node(node_3)
     sorted_linked_list.add_node(node_4)
     sorted_linked_list.add_node(node_5)
+    sorted_linked_list.add_node(node_6)
+    sorted_linked_list.add_node(node_7)
                     
     current_node = sorted_linked_list.root
     while True:
