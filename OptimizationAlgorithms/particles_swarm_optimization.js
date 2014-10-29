@@ -1,7 +1,7 @@
 /*
  *  Particles Swarm Optimization
  *  This is a standard PSO to find out optimal solution through out the stochastic spaces
- * 
+ *  PS: numeric.js is utilized to manipulate matrix operation
  * */
 
 var particles_swarm_optimization = {
