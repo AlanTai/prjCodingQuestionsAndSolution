@@ -116,7 +116,4 @@ if __name__ == "__main__":
 
     print solution_2([6, 10, 1,0,2,3,2,1,2,2,3,3,2,4,5,2,3,3,67,7])
     
-    for elem in []:
-        print elem
-    
     

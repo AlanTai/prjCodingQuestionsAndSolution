@@ -27,7 +27,7 @@ def solution_test_1(A):
     while P < len(A) - 1:
         rest_len = (len(A) - 1 - P)
         
-        # check if the rest of length is odd or even
+        # check if the length of the rest list is odd or even
         if (len(A) - 1 - P) % 2 == 0:
             half_rest_len = (len(A) - 1 - P) / 2
         else:
@@ -70,7 +70,8 @@ def solution_test_2(K, A):
     P = 0
     
     while P < len(A):
-        #
+        
+        # check if the length of the rest list is odd or even
         if len(A) % 2 == 0:
             half_len = len(A) / 2
         else:
