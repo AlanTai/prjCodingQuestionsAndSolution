@@ -23,11 +23,11 @@ if __name__ == "__main__":
     #
     for ith in xrange(10):
         with RunWith(ith):
-            print "Processing...{0}".format(ith)
+            print "New Way - Processing...{0}".format(ith)
             
     #
     for jth in xrange(5):
         with run_with(jth):
-            print "Processing...{0}".format(jth)
+            print "Typical Way - Processing...{0}".format(jth)
             
             

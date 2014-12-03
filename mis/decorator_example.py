@@ -7,6 +7,7 @@ def logger(func):
     return inner
     
     
+# logger take test_1 as argument, and *args and **kwargs can be used inside inner
 @logger
 def test_1(*args, **kwargs):
     return "Var: {0}, {1}".format(args, kwargs)
