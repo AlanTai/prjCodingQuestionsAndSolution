@@ -194,7 +194,8 @@ function throttledAction(){
 //throttle solution 2
 var colorAry2 = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 var colorIndex2 = 0;
-var colorIndexDebounce = 0;
+var colorIndexDebounceBefore = 0;
+var colorIndexDebounceAfter = 0;
 $("#button_2").click(function() {
     throttled2();    
 });
@@ -206,15 +207,15 @@ function changeBackgroundColor2(){
 }
 
 function changeBackgroundColorDebounceBefore(){
-    $("#debounce_before").css({'background-color' : colorAry2[colorIndex2]});
-    colorIndexDebounce++;
-    colorIndexDebounce = colorIndexDebounce % 7;
+    $("#debounce_before").css({'background-color' : colorAry2[colorIndexDebounceBefore]});
+    colorIndexDebounceBefore++;
+    colorIndexDebounceBefore = colorIndexDebounceBefore % 7;
 }
 
 function changeBackgroundColorDebounceAfter(){
-    $("#debounce_after").css({'background-color' : colorAry2[colorIndex2]});
-    colorIndexDebounce++;
-    colorIndexDebounce = colorIndexDebounce % 7;
+    $("#debounce_after").css({'background-color' : colorAry2[colorIndexDebounceAfter]});
+    colorIndexDebounceAfter++;
+    colorIndexDebounceAfter = colorIndexDebounceAfter % 7;
 }
 
 var actionAry = [];
