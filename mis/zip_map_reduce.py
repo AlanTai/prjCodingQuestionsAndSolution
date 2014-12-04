@@ -9,3 +9,4 @@ if __name__ == "__main__":
     
     print find_max_vals_of_list(zip(a, b))
     print reduce(lambda a, b: find_max_vals_of_list(zip(a,b)), maxtrix)
+    
