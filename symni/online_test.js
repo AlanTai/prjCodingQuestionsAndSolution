@@ -138,10 +138,18 @@ console.log(princess.getFriends());
  *    After one full cycle through the array, it should begin again at the first color in the array.
  *    However, these color changes should be throttled so that it can only be changed 0.5 seconds
  *    after the last change.
-
+ *
  * Available HTLM:
- *   <div id=”main”></div>
- *   <button id=”button”>Rainbow Time!</button>
+ *   <div id="main">Current Color (solution 1)</div>
+ *   <button id="button">Rainbow Time 1!</button>
+ *
+ *	 <div id="main_2">Current Color (solution 2)</div>
+ *	 <button id="button_2">Rainbow Time 2!</button>
+ *
+ *   <br/>
+ *	 <div id="debounce_before">Current Color (Debounce: After Action)</div>
+ *   <br/>
+ *   <div id="debounce_after">Current Color (Debounce: After Action)</div>
  */
 var colorAry = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 var colorIndex = 0;
@@ -155,7 +163,7 @@ function changeBackgroundColor(){
     colorIndex = colorIndex % 7;
 }
 
-// throttle
+// throttle solution 1
 var timeoutAction;
 var startAction=true;
 var continueAction=false;
@@ -181,3 +189,60 @@ function throttledAction(){
         clearTimeout(timeoutAction);
     }
 }
+
+
+//throttle solution 2
+var colorAry2 = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+var colorIndex2 = 0;
+var colorIndexDebounce = 0;
+$("#button_2").click(function() {
+    throttled2();    
+});
+
+function changeBackgroundColor2(){
+    $("#main_2").css({'background-color' : colorAry2[colorIndex2]});
+    colorIndex2++;
+    colorIndex2 = colorIndex2 % 7;
+}
+
+function changeBackgroundColorDebounceBefore(){
+    $("#debounce_before").css({'background-color' : colorAry2[colorIndex2]});
+    colorIndexDebounce++;
+    colorIndexDebounce = colorIndexDebounce % 7;
+}
+
+function changeBackgroundColorDebounceAfter(){
+    $("#debounce_after").css({'background-color' : colorAry2[colorIndex2]});
+    colorIndexDebounce++;
+    colorIndexDebounce = colorIndexDebounce % 7;
+}
+
+var actionAry = [];
+var isThrottleStarted2 = false;
+var timeoutAction2;
+function throttled2(){
+    actionAry.push(changeBackgroundColor2);
+    if(!isThrottleStarted2){
+        isThrottleStarted2 = true;
+        doAction();
+        
+        // debounce (before)
+        changeBackgroundColorDebounceBefore();
+    }
+}
+
+function doAction(){
+    if(actionAry.length > 0){
+        var action = actionAry.shift();
+        action(); // change background color
+        timeoutAction2=setTimeout(doAction,500);
+    }
+    else{
+        isThrottleStarted2=false;
+        clearTimeout(timeoutAction2);
+        
+        // debounce (after)
+        changeBackgroundColorDebounceAfter();
+    }
+}
+
