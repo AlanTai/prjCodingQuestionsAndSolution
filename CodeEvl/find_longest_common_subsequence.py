@@ -32,7 +32,9 @@ def solution(arg_str):
                     max_val = max(result_matrix[index1][index2 - 1], result_matrix[index1 - 1][index2])
                     result_matrix[index1].append(max_val)
                     
-    return result_matrix
+    max_length = max(result_matrix[len(result_matrix) - 1])
+                    
+    return max_length
                     
     
     
@@ -44,9 +46,10 @@ if __name__ == "__main__":
     str2 = list_str[1]
     print difflib.SequenceMatcher(None, str1, str2).get_matching_blocks()
     print solution(given_str)
-    # result_matrix = [[],[]]
-#     result_matrix[0].append(0)
-#     print result_matrix
+    
+    
+    
+    
     
     
     
