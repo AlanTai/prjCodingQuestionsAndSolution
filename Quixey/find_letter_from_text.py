@@ -1,3 +1,5 @@
+# question statement
+
 def solution(arg_str, arg_text):
     letter_dict = {}
     result = []

@@ -1,5 +1,7 @@
 from collections import OrderedDict
 
+# In a given text, if there are two or more identical characters in sequence, delete the repetitions and leave only the first character.
+
 def remove_duplicated_char_in_each_word(arg_txt):
     char_list = []
     result = ""
@@ -10,7 +12,6 @@ def remove_duplicated_char_in_each_word(arg_txt):
         elif char == " ":
             result = result + char
             char_list = []
-    
     return result
     
 
@@ -21,3 +22,4 @@ if __name__ == "__main__":
     # print "".join(OrderedDict.fromkeys(given_str))
     
     print remove_duplicated_char_in_each_word(given_str)
+    # answer: Shels molusk lives in wales house in welns. Aargh!
