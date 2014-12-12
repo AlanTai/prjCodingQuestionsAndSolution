@@ -18,7 +18,13 @@ def remove_duplicated_char_in_each_word(arg_txt):
 if __name__ == "__main__":
     ''' remove duplicated characters and only keep the first character'''
     
-    given_str = "Shellless mollusk lives in wallless house in wellness. Aaaarrghh!"
+    given_str = """
+    But as he spake he drew the good sword from its scabbard, and smote a heathen knight, Jusssstin of thee Iron Valley.
+    No matttter whom you choose, she deccccclared, I will abide by your decision.
+    Wwwhat is your will?
+    At his magic speech the ground oppened and he began the path of descent.
+    I should fly away and you would never see me again.
+    """
     # print "".join(OrderedDict.fromkeys(given_str))
     
     print remove_duplicated_char_in_each_word(given_str)

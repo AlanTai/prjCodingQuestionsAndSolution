@@ -36,21 +36,21 @@ def solution(arg_str):
     return result_matrix
                     
 def trackback(arg_matrix):
-    result = {}
+    result_dict = {}
     for elem in arg_matrix:
         max_val = max(elem)
         max_val_index = elem.index(max_val)
-        if max_val not in result:
-            result[max_val] = max_val_index
+        if max_val not in result_dict:
+            result_dict[max_val] = max_val_index
         else:
-            if result[max_val] > max_val_index:
-                result[max_val] = max_val_index
-    return result
+            if result_dict[max_val] > max_val_index:
+                result_dict[max_val] = max_val_index
+    return result_dict
                     
     
     
 if __name__ == "__main__":
-    given_str = "XMJYAUZ;MZJAWXU"
+    given_str = "XMDJYBAUZC;MDZJXUC"
 
     list_str = given_str.split(";")
     str1 = list_str[0]
@@ -61,18 +61,10 @@ if __name__ == "__main__":
     result_dict = trackback(result_matrix)
     print "".join(list2[result_dict[key]] for key in result_dict)
     
+    
+    print "3 3 8 9".split(" ")
+    
     # print difflib.SequenceMatcher(None, str1, str2).get_matching_blocks()
-    
-    
-    
-import sys
-test_cases = open(sys.argv[1], 'r')
-for test in test_cases:
-    # ignore test if it is an empty line
-    # 'test' represents the test case, do something with it
-    print test
-    
-test_cases.close()
     
     
     
