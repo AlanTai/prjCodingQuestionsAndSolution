@@ -4,6 +4,7 @@ Created on Oct 26, 2014
 @author: alantai
 '''
 
+# depth-first solution
 def solution(A):
     result = []
     while len(A) > 0:
@@ -14,6 +15,8 @@ def solution(A):
         
         del A[0]    
     return result
+    
+# bread-first solution
         
         
 if __name__ == "__main__":
