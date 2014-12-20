@@ -1,5 +1,4 @@
-import base64
-
+# -*- coding: utf-8 -*-
 import base64
 def encode(key, clear):
     enc = []
@@ -26,3 +25,4 @@ if __name__ == "__main__":
     
     print enc_str
     print dec_str
+    print u"哈哈"
