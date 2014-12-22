@@ -19,7 +19,7 @@ def decode(key, enc):
     
     
 if __name__ == "__main__":
-    given_str = "hello world"
+    given_str = "hello worldrtherthetrh546uy56u56$U%^U%^U^%&U$^&I^&IYUTR"
     enc_str = encode("alantai", given_str)
     dec_str = decode("alantai", enc_str)
     
