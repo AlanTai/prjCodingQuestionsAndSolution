@@ -16,7 +16,7 @@ def solution_dfs(A):
         del A[0]    
     return result
     
-# bread-first solution
+# breadth-first solution
 def solution_bfs(arg_list):
     list_of_list = []
     
