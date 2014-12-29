@@ -16,7 +16,7 @@ def solution_dfs(A):
         del A[0]    
     return result
     
-# breadth-first solution
+# breadth-first solution ; go through each level to check if the element
 def solution_bfs(arg_list):
     list_of_list = []
     
@@ -25,7 +25,7 @@ def solution_bfs(arg_list):
         if isinstance(elem, list):
             list_of_list = list_of_list + elem
         else:
-            yield elem
+            yield elem # return elem which is not list first
             
         if len(arg_list) == 0:
             arg_list = list_of_list
@@ -33,10 +33,10 @@ def solution_bfs(arg_list):
         
         
 if __name__ == "__main__":
-    given_list = [1,2,[5,4,3,[2,1,[2,5,4,7,[0]]]],[0,1,[2]],5,[3,4,[1,2,9,0],[4,3,[3,[2,0,0,[1,2],1],2]]],2,[1,2,[4],5,4,[1,2,3]],1,2,9]
+    given_list = [1,2,[5,4,3,[2,1,[2,5,4,7,[0]],98,3,4,5,6,4]],2,1,2,3,6,[0,1,[2]],5,[3,4,[1,2,9,0],[4,3,[3,[2,0,0,[1,2],1],2]]],2,[1,2,[4],5,4,[1,2,3]],1,2,9]
     print solution_dfs(given_list)
     
-    given_list = [1,2,[5,4,3,[2,1,[2,5,4,7,[0]]]],[0,1,[2]],5,[3,4,[1,2,9,0],[4,3,[3,[2,0,0,[1,2],1],2]]],2,[1,2,[4],5,4,[1,2,3]],1,2,9]
+    given_list = [1,2,[5,4,3,[2,1,[2,5,4,7,[0]],98,3,4,5,6,4]],2,1,2,3,6,[0,1,[2]],5,[3,4,[1,2,9,0],[4,3,[3,[2,0,0,[1,2],1],2]]],2,[1,2,[4],5,4,[1,2,3]],1,2,9]
     list_result = []
     for elem in solution_bfs(given_list):
         list_result.append(elem)

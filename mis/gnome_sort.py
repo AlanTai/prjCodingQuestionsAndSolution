@@ -1,5 +1,5 @@
 def gnome_sort(arg_list):
-    ith = 0
+    ith = 0 # start frm the first element
     while ith < len(arg_list):
         if ith == 0 or arg_list[ith - 1] >= arg_list[ith]:
             ith += 1
